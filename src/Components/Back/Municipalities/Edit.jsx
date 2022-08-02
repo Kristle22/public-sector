@@ -8,7 +8,6 @@ function Edit() {
     modalData,
     setModalData,
     setEditData,
-    second,
     showMessage,
     setDeletePhoto,
   } = useContext(BackContext);
@@ -74,35 +73,17 @@ function Edit() {
               >
                 &times;
               </button>
-              <button
+              <button className='remove'
                 type='button'
-                onClick={handleDeletePhoto}
-                style={{
-                  backgroundColor: 'crimson',
-                  color: '#fff',
-                  padding: '3px 7px',
-                  marginBottom: '5px',
-                  border: 'none',
-                  borderRadius: '5px',
-                  fontSize: '14px',
-                  float: 'right',
-                }}
-              >
+                onClick={handleDeletePhoto}>
                 Remove Photo
               </button>
-              {
-                <div style={{ width: '100%' }}>
-                  <img
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      borderRadius: '5px',
-                    }}
-                    src={image ? image : null}
-                    alt='new outfit'
-                  />
-                </div>
-              }
+              <div>
+                <img
+                  src={image ? image : null}
+                  alt='coat of arms'
+                />
+              </div>
             </div>
             <div className='right-side form'>
               <form>

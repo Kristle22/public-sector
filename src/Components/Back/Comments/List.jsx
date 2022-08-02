@@ -4,6 +4,7 @@ import BackContext from '../BackContext';
 
 function List() {
   const { comments } = useContext(BackContext);
+  const comTotal = comments && comments.map(c => c.status === 1 ? c.com_count : 0).reduce((acc, total) => acc + total, 0);
 
   return (
     <>
@@ -12,10 +13,7 @@ function List() {
       </div>
       <div className='flex-card'>
         <div className=' com'>
-          <h2>Admin Comments:</h2>
-          {/* <h4>Image</h4>
-          <h4>Type</h4>
-          <h4>Price</h4> */}
+          <h2>Admin Comments({comTotal && comTotal}):</h2>
         </div>
         {comments ? comments.map((c) => <Row key={c.id} row={c} />) : null}
       </div>

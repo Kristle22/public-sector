@@ -21,8 +21,7 @@ function Back({ show }) {
 
   const [areas, setAreas] = useState(null);
   const [createArea, setCreateArea] = useState(null);
-
-  const [deletePhoto, setDeletePhoto] = useState(null);
+  const [deleteArea, setDeleteArea] = useState(null);
 
   const [status, setStatus] = useState(0);
 
@@ -31,6 +30,7 @@ function Back({ show }) {
   const [search, setSearch] = useState('');
 
   // Optional state
+  const [deletePhoto, setDeletePhoto] = useState(null);
   const [comments, setComments] = useState(null);
   const [deleteCom, setDeleteCom] = useState(null);
 
@@ -85,18 +85,29 @@ function Back({ show }) {
   useEffect(() => {
     if (null === deleteData) return;
     axios
-      .delete('http://localhost:3003/main/' + deleteData.id, authConfig())
+      .delete('http://localhost:3003/miestai/' + deleteData.id, authConfig())
       .then((res) => {
         showMessage(res.data.msg);
         setLastUpdate(Date.now());
       });
   }, [deleteData]);
 
+  // DELETE AREAS
+  useEffect(() => {
+    if (null === deleteArea) return;
+    axios
+      .delete('http://localhost:3003/sritys/' + deleteArea.id, authConfig())
+      .then((res) => {
+        showMessage(res.data.msg);
+        setLastUpdate(Date.now());
+      });
+  }, [deleteArea]);
+
   // EDIT
   useEffect(() => {
     if (null === editData) return;
     axios
-      .put('http://localhost:3003/main/' + editData.id, editData, authConfig())
+      .put('http://localhost:3003/miestai/' + editData.id, editData, authConfig())
       .then((res) => {
         showMessage(res.data.msg);
         setLastUpdate(Date.now());
@@ -184,6 +195,7 @@ function Back({ show }) {
         setEditData,
         areas,
         setCreateArea,
+        setDeleteArea,
         sort,
         sorting,
         filter,

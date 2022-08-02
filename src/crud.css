@@ -58,6 +58,12 @@ body {
 .mrg {
   margin: 15px;
 }
+.pad {
+  padding: 15px;
+}
+.pad2 {
+  padding: 30px;
+}
 .left {
   text-align: left;
 }
@@ -100,6 +106,7 @@ body {
 }
 .order-9,
 .main-5,
+.admin-5,
 .user-4,
 .com-3 {
   display: grid;
@@ -112,13 +119,17 @@ body {
   /* border-bottom: 1px solid #fff; */
 }
 .main-5 {
-  /* grid-template-columns: repeat(5, 1fr); */
-  grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+  grid-template-columns: repeat(5, 1fr);
   font-size: 20px;
   width: 95%;
 }
+.admin-5 {
+  grid-template-columns: 1fr 1fr 1fr 5fr 1fr;
+  font-size: 18px;
+  width: 95%;
+}
 .user-4 {
-  grid-template-columns: 1fr 2fr 2fr 2fr;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
   width: 80%;
 }
 .com-3 {
@@ -253,6 +264,16 @@ button.close {
 .edt.nav-cart {
   fill: #1b8b19;
 }
+button.remove {
+  background-color: crimson;
+  color: #fff;
+  padding: 3px 7px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  float: right;
+}
 
 .inCart {
   position: relative;
@@ -372,6 +393,7 @@ img {
   height: auto;
   border-radius: 5px;
   object-fit: contain;
+  padding: 5px;
 }
 .imghere {
   position: absolute;
@@ -588,7 +610,7 @@ fieldset {
   padding: 0 0 10px 10px;
 }
 
-.statistic {
+.fix {
   display: flex;
   width: 55%;
   flex-direction: column;
@@ -931,6 +953,7 @@ h1 b {
 }
 .com ul li {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   margin-bottom: 15px;
   text-align: left;

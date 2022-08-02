@@ -13,13 +13,13 @@ function Row({ row }) {
   return (
     <>
       <div className='user-4 frame list'>
-        <img
+        <img className='img-box'
           src={row.photo}
-          alt='some_outfit'
+          alt='coat of arms'
         />
         <p>{row.title}</p>
         <p>{row.address}</p>
-        <p>{row.email} Eur.</p>
+        <p>{row.email}</p>
       </div>
       <div className='btns row'>
         <button type='button' className='edt' onClick={handleModal}>

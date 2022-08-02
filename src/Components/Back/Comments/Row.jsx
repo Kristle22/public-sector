@@ -6,42 +6,23 @@ function Row({ row }) {
   const { handleDeleteCom } = useContext(BackContext);
 
   return (
-    <>
-      <div className='frame com flex-row feedback'>
-        <div className="flex-nw">
-          {/* <img
-            className='img-box'
-            src={row.photo ? row.photo : null}
-            alt='coat of arms'
-          /> */}
-          <div>
-            <h2>
-              {row.municipality}
-            </h2>
-            <p className='prc'>
-              {row.activity}
-            </p>
-          </div>
-        </div>
-        <div className='com'>
-          <h2>Comments({row.com_count})</h2>
-          <ul>
-            {row.coms && row.coms.slice(0, -5).split('-^-^-,').map((c, i) => <li key={i}>{c}
-              <StatusBtns row={row} />
-              {/* <button
-                type='button'
-                className='dlt'
-                onClick={() =>
-                  handleDeleteCom(row.coms_id.split(',')[i])}>
-                <svg>
-                  <use href='#Delete' />
-                </svg>
-              </button> */}
-            </li>)}
-          </ul>
-        </div>
-      </div>
-    </>
+    <div className='frame com admin-5'>
+      <img
+        className='img-box pad'
+        src={row.image ? row.image : null}
+        alt='coat of arms'
+      />
+      <b>
+        {row.municipality}
+      </b>
+      <u>
+        {row.activity}
+      </u>
+      <ul className='flex'>
+        <li>{row.com}</li>
+      </ul>
+      <StatusBtns row={row} />
+    </div>
   );
 }
 

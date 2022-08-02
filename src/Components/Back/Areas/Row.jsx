@@ -12,6 +12,12 @@ function Row({ row }) {
   return (
     <>
       <div className='flex-row line com'>
+        <div className='img-box pad'>
+          <img
+            src={row.photo}
+            alt='activity'
+          />
+        </div>
         <h2
           style={{
             // backgroundColor: row.hex_code,

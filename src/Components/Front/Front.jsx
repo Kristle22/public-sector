@@ -51,7 +51,7 @@ function Front({ show }) {
     // }
 
     axios
-      .get('http://localhost:3003/miestai', authConfig())
+      .get('http://localhost:3003/miestai')
       .then((res) => {
         const action = {
           type: 'main_list',
@@ -63,7 +63,7 @@ function Front({ show }) {
 
   // Read Areas
   useEffect(() => {
-    axios.get('http://localhost:3003/sritys', authConfig()).then((res) => {
+    axios.get('http://localhost:3003/sritys').then((res) => {
       setAreas(res.data);
     });
   }, [lastUpdate]);
@@ -76,9 +76,10 @@ function Front({ show }) {
     } else if (filter) {
       query = '?area-id=' + filter;
     } else if (search) {
+      console.log(search)
       query = '?s=' + search;
     }
-    axios.get('http://localhost:3003/komentarai' + query, authConfig()).then((res) => {
+    axios.get('http://localhost:3003/komentarai' + query).then((res) => {
       setComments(res.data);
     });
   }, [lastUpdate, filter, search]);
