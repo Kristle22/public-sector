@@ -58,7 +58,7 @@ function Create() {
                 objectFit: 'contain',
               }}
               src={image}
-              alt='scooter'
+              alt='item'
             />
           </div>
         ) : null}

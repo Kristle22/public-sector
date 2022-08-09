@@ -133,7 +133,7 @@ function Back({ show }) {
       });
   }, [createArea]);
 
-  /////////////////////////COMMENTS/PHOTO/STATUS//////////////////////////////
+  ////////////////////////COMMENTS/PHOTO/STATUS////////////////////////
   // READ COMMENTS
   useEffect(() => {
     axios.get('http://localhost:3003/komentarai', authConfig()).then((res) => {
