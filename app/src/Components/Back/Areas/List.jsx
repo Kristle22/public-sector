@@ -9,7 +9,7 @@ function List() {
       <div
         className='flex-card'
         style={{
-          maxWidth: '600px',
+          maxWidth: '700px',
           minWidth: '300px',
           margin: '10px  0 0 50px ',
         }}

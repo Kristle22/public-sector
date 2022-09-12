@@ -113,15 +113,18 @@ body {
   grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 3fr;
   justify-content: center;
   align-items: center;
+  text-align: left;
   word-break: break-all;
   width: 95%;
   gap: 10px;
   /* border-bottom: 1px solid #fff; */
 }
 .main-5 {
-  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-columns: repeat(5, 1fr); */
+  grid-template-columns: 1fr 2fr 2.7fr 1.7fr 1.7fr;
   font-size: 20px;
   width: 95%;
+  padding-left: 20px;
 }
 .admin-5 {
   grid-template-columns: 1fr 1fr 1fr 5fr 1fr;
